@@ -2,7 +2,7 @@
 {% block body %}
     <div class="container">
         <h1>Registration</h1>
-        <form class="formgreen" method="POST">
+        <form class="formgreen" name="form1" method="POST" onsubmit="required()">
           {% csrf_token %}
             <div class="form-group">
               <label for="nom">Name</label>
@@ -25,6 +25,5 @@
             <button type="submit" class="btn btn-primary">  CONNECT  </button>
             <button type="button" id="skip" class="btn btn-primary">     SKIP     </button>
           </form>
-          
     </div>
 {% endblock body %}

@@ -92,3 +92,8 @@ input::placeholder
     color: rgba(27, 233, 55, 0.541);
     transition: .1s;
 }
+
+.image-index
+{
+    image-resolution: 1300*768;
+}
