@@ -96,4 +96,5 @@ input::placeholder
 #skip
 {
     background-color: #fff;
+    text-emphasis-color: blue;
 }
