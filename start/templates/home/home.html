@@ -1,16 +1,16 @@
 {% extends "home/base.html" %}
-{% load static %}
-
-
-{% block body %}
+ {% load static %} 
+ {% block body %}
 <div class="container">
-    <div class="img-fluid">
-        <img src="{% static 'image/indeximg.png' %}" alt="image principale">
-    </div>
-    <div>
-        <button class="btn btn-primary big" type="button" onclick="location.href='/connect'">
-            PLAY
-        </button></div>
-    <div class="right" onclick="location.href='/dashboard'"> >>>DASHBOARD</div>
+  <div class="img-fluid">
+    <img src="{% static 'image/indeximg.png' %}" alt="image principale" />
+  </div>
+  <div>
+    <button
+      class="btn btn-primary big" type="button" onclick="location.href='/connection'">
+      PLAY
+    </button>
+  </div>
+  <div class="right" onclick="location.href='/dashboard'">>>>DASHBOARD</div>
 </div>
 {% endblock body %}

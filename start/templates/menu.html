@@ -1,0 +1,17 @@
+{% extends "home/base.html" %} 
+{% load static %}
+
+{% block body %}
+<div class="container">
+  <div class="left" onclick="location.href='/'">EXIT</div>
+  <h1>MENU</h1>
+  <div class="btn-group mr-2" role="group" aria-label="First group">
+    <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/config1'">SINGLE PLAY</button>
+    <br>
+  </div>
+  <br>
+  <div class="btn-group mr-2" role="group" aria-label="Second group">
+    <button type="button" class="btn btn-primary btn-lg" onclick="location.href='/config2'">MULTI  PLAY</button>
+  </div>
+</div>
+{% endblock body %}

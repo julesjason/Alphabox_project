@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'start',
     'part1',
     'dashboard',
+    'menu',
 ]
 
 MIDDLEWARE = [
