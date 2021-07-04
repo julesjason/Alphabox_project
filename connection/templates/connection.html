@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block body %}
+
+<div class="container">
+  <h1>Connection</h1>
+  <form class="formgreen" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="nom">Name</label>
+      <input
+        type="text"
+        name="name"
+        class="form-control"
+        id="nom"
+        aria-describedby="nameHelp"
+        placeholder="Enter Name"
+      />
+      <small id="nameHelp" class="form-text text-muted"></small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input
+        type="password"
+        name="password1"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Password"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Connect</button>
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      onclick="location.href='/menu'"
+    >
+      SKIP
+    </button>
+    <br>
+    <div onclick="location.href='/connect'">don't have an acompte? create one 
+    </div>
+  </form>
+</div>
+{% endblock body %}
