@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'connect',
     'start',
     'part1',
+    'dashboard',
 ]
 
 MIDDLEWARE = [

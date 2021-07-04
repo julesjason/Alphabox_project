@@ -18,6 +18,8 @@ def register(request):
                 user = User.objects.create_user(username=name, password=password_1, email=email)
                 user.save()
                 print('user created')
+                request.method='GET'
+                return render(request,"part1.html")
         else:
             print('password not matching...')
         return redirect('/')
