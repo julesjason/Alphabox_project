@@ -2,8 +2,8 @@
 {% block body %}
     <div class="container">
         <header>
-          <div class="elmnt">Nombre de point : <span>5000</span></div>
-          <div class="elmnt">Niveau : <span>2</span></div>
+          <div class="elmnt">Nombre de point : <span>00</span></div>
+          <div class="elmnt">Niveau : <span>1</span></div>
           <div class="elmnt">Difficulté : <span>FACILE</span></div>
           <div class="elmnt" style="font-weight: bold;">EXIT</div>
         </header>
@@ -11,16 +11,18 @@
           <div class="left_a">
             <div class="la_t" style="display: flex; justify-content:space-between;padding:0 20px">
               <div style="font-weight: bold; font-size:1.4em; color:blue">ETAPE <span>1</span></div>
-              <div style="font-weight: bold; font-size:1.6em; color:rgb(255, 255, 255);background-color:rgb(27, 233, 54);padding:10px 20px">00:00</div>
-              <button style="background-color: blue;padding:5px 13px;border-radius:5px;border:none;color:#fff">START</button>
+              <div id="countdown" style="font-weight: bold; font-size:1.6em; color:rgb(255, 255, 255);background-color:rgb(27, 233, 54);padding:10px 20px">00:00</div>
+              <button type="button" class="start" onclick="fonctioninterval()" style="background-color: blue;padding:5px 13px;border-radius:5px;border:none;color:#fff">START</button>
             </div>
-            <div style="display: flex;justify-content:center;padding:50px 0">
+            <form method='POST'>
+              {% csrf_token %}
+              <div style="display: flex;justify-content:center;padding:50px 0">
               <div style="background-color: darkkhaki;border:3px solid blue; border-radius:40px;padding:30px 50px">B</div>
-            </div>
-            <div style="width: 100%; display:flex;flex-direction:column;align-items:center">
-              <textarea style="width: 97%; background-color:rgba(218, 216, 216, 0.459)" name="" id="" cols="30" rows="10"></textarea>
-              <button style="background-color: blue; width:max-content;padding:5px 13px;border-radius:5px;border:none;margin:20px 0;color:#fff">VALIDER</button>
-
+              </div>
+              <div style="width: 100%; display:flex;flex-direction:column;align-items:center">
+              <textarea  style="width: 97%; backgroun d-color:rgba(218, 216, 216, 0.459)" name="" id="" cols="30" rows="10"></textarea>
+              <button type ="submit" style="background-color: blue;width:max-content;padding:5px 13px;border-radius:5px;border:none;margin:20px 0;color:#fff">VALIDER</button>
+            </form>
             </div>
           </div>
           <div class="right_a">
@@ -31,4 +33,20 @@
           </div>
         </section>
     </div>
+    <script>
+    function fonctioninterval()
+    {
+      let max = 60;
+      let buttton = document.querySelector(".start");
+      let count = document.querySelector("#countdown");
+      let form = document.querySelector("form")
+      let x = setInterval(function()
+       { 
+         max--; 
+         count.innerText = max; 
+         if(!max) {clearInterval(x); form.submit();
+         }
+        }, 1000); 
+    }
+    </script>
 {% endblock body %}

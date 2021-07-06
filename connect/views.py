@@ -19,10 +19,10 @@ def register(request):
                 user.save()
                 print('user created')
                 request.method='GET'
-                return render(request,"part1.html")
+                return render(request,"menu.html")
         else:
             print('password not matching...')
-        return redirect('/')
+        return render(request, 'connect/register.html')
     
     else:
         return render(request,"connect/register.html")

@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'dashboard',
     'menu',
     'connection',
+    'config1',
 ]
 
 MIDDLEWARE = [

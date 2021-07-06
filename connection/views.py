@@ -8,10 +8,13 @@ def connection(request):
         name = request.POST['name']
         password = request.POST['password1']
         #predefine fonction from django using from django.contrib.auth import authenticate
+        
         user = authenticate(username=name,password=password)
         if user is not None:
             request.method= 'GET'
             return render(request, 'menu.html')
+        else:
+            return render(request, 'connection.html')
     else:
         return render(request, 'connection.html')
 
